@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Noticias</string>
+    <string name="titulo">Titulo</string>
+    <string name="texto">Texto</string>
+    <string name="autor">Autor</string>
+    <string name="fecha">Fecha</string>
+    <string name="anadir">Añadir</string>
+    <string name="mensaje_parseo_fecha">Formato de fecha no válido</string>
+</resources>
