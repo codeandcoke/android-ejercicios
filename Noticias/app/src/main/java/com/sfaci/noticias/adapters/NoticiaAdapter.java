@@ -54,7 +54,14 @@ public class NoticiaAdapter extends BaseAdapter {
         else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        return null;
+
+        Noticia noticia = noticias.get(posicion);
+        viewHolder.tvTitulo.setText(noticia.getTitulo());
+        viewHolder.tvFragmento.setText(noticia.getTexto());
+        viewHolder.tvAutorFecha.setText(noticia.getAutor());
+
+
+        return view;
     }
 
     @Override
