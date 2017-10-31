@@ -2,11 +2,17 @@ package com.sfaci.noticias.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.constraint.solver.ArrayLinkedVariables;
 
 import com.sfaci.noticias.base.Noticia;
 import com.sfaci.noticias.util.Util;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
 
 import static com.sfaci.noticias.util.Constantes.AUTOR;
 import static com.sfaci.noticias.util.Constantes.FECHA;
@@ -27,7 +33,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLA_NOTICIAS + "(" +
-                "id INT PRIMARY KEY AUTOINCREMENT," +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 TITULO + " TEXT, " + TEXTO + " TEXT, " +
                 AUTOR + " TEXT, " + FECHA + " TEXT)");
     }
@@ -49,5 +55,31 @@ public class BaseDatos extends SQLiteOpenHelper {
         valores.put(FECHA, Util.formatFecha(noticia.getFecha()));
 
         db.insertOrThrow(TABLA_NOTICIAS, null, valores);
+    }
+
+    public ArrayList<Noticia> obtenerNoticias() {
+
+        ArrayList<Noticia> noticias = new ArrayList<>();
+        final String[] SELECT = {TITULO, TEXTO, AUTOR, FECHA};
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor =
+                db.query(TABLA_NOTICIAS, SELECT, null, null, null, null, null);
+        while(cursor.moveToNext()) {
+            Noticia noticia = new Noticia();
+            noticia.setTitulo(cursor.getString(0));
+            noticia.setTexto(cursor.getString(1));
+            noticia.setAutor(cursor.getString(2));
+            try {
+                noticia.setFecha(Util.parseFecha(cursor.getString(3)));
+            } catch (ParseException pe) {
+                noticia.setFecha(new Date(0));
+            }
+            noticias.add(noticia);
+        }
+        cursor.close();
+        db.close();
+
+        return noticias;
     }
 }

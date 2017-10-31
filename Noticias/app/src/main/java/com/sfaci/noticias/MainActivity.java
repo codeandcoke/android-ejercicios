@@ -1,39 +1,64 @@
 package com.sfaci.noticias;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.sfaci.noticias.adapters.NoticiaAdapter;
 import com.sfaci.noticias.base.Noticia;
+import com.sfaci.noticias.db.BaseDatos;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private NoticiaAdapter adapter;
+    private ArrayList<Noticia> noticias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Noticia> noticias = new ArrayList<>();
-
-        // Poblar la lista de noticias
-        // De la Base de Datos o de donde sea
-        Noticia noticia = new Noticia();
-        noticia.setTitulo("Atropello en el tranvía");
-        noticia.setTexto("Han atropellado a un tio hoy");
-        noticia.setAutor("Guillermo Mate");
-        noticias.add(noticia);
-        noticia = new Noticia();
-        noticia.setTitulo("Atropello en el tranvía2");
-        noticia.setTexto("Han atropellado a un tio hoy2");
-        noticia.setAutor("Guillermo Mate2");
-        noticias.add(noticia);
-
+        noticias = new ArrayList<>();
         ListView lvNoticias = (ListView) findViewById(R.id.lvNoticias);
-        NoticiaAdapter adapter = new NoticiaAdapter(this, noticias);
+        adapter = new NoticiaAdapter(this, noticias);
         lvNoticias.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        noticias.clear();
+
+        BaseDatos db = new BaseDatos(this);
+        noticias.addAll(db.obtenerNoticias());
+
+        adapter.notifyDataSetChanged();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_alta:
+                Intent intent = new Intent(this, AltaNoticia.class);
+                startActivity(intent);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
