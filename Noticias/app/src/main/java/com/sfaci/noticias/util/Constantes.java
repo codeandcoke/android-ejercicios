@@ -7,6 +7,7 @@ package com.sfaci.noticias.util;
 public class Constantes {
 
     public static final String TABLA_NOTICIAS = "noticias";
+    public static final String ID = "id";
     public static final String TITULO = "titulo";
     public static final String AUTOR = "autor";
     public static final String TEXTO = "texto";

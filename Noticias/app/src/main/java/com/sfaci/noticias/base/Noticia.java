@@ -1,10 +1,11 @@
 package com.sfaci.noticias.base;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Noticia {
+public class Noticia implements Serializable {
 
-    private long id;
+    private int id;
     private String titulo;
     private String texto;
     private String autor;
@@ -13,11 +14,11 @@ public class Noticia {
     public Noticia() {
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

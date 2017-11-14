@@ -1,5 +1,6 @@
 package com.sfaci.noticias;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,15 +19,23 @@ import java.time.format.DateTimeFormatter;
 public class AltaNoticia extends AppCompatActivity
     implements View.OnClickListener{
 
+    boolean modificar;
+    int idNoticia;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alta_noticia);
 
+        Intent intent = getIntent();
+        Noticia noticia = (Noticia) intent.getSerializableExtra("noticia");
+        if (noticia != null) {
+            modificar = true;
+            rellenarFormulario(noticia);
+        }
+
         Button btAnadir = (Button) findViewById(R.id.btAnadir);
         btAnadir.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -50,10 +59,32 @@ public class AltaNoticia extends AppCompatActivity
             noticia.setFecha(Util.parseFecha(fecha));
 
             BaseDatos db = new BaseDatos(this);
-            db.insertarNoticia(noticia);
+
+            if (modificar) {
+                noticia.setId(idNoticia);
+                db.modificarNoticia(noticia);
+            }
+            else {
+                db.insertarNoticia(noticia);
+            }
         } catch (ParseException pe) {
             Toast.makeText(this, R.string.mensaje_parseo_fecha,
                     Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void rellenarFormulario(Noticia noticia) {
+
+        EditText etTitulo = (EditText) findViewById(R.id.etTitulo);
+        EditText etTexto = (EditText) findViewById(R.id.etTexto);
+        EditText etAutor = (EditText) findViewById(R.id.etAutor);
+        EditText etFecha = (EditText) findViewById(R.id.etFecha);
+
+        etTitulo.setText(noticia.getTitulo());
+        etTexto.setText(noticia.getTexto());
+        etFecha.setText(Util.formatFecha(noticia.getFecha()));
+        etAutor.setText(noticia.getAutor());
+
+        idNoticia = noticia.getId();
     }
 }

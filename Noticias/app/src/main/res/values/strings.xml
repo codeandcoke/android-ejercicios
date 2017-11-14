@@ -6,4 +6,6 @@
     <string name="fecha">Fecha</string>
     <string name="anadir">Añadir</string>
     <string name="mensaje_parseo_fecha">Formato de fecha no válido</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
 </resources>

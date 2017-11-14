@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.sfaci.noticias.adapters.NoticiaAdapter;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         noticias = new ArrayList<>();
         ListView lvNoticias = (ListView) findViewById(R.id.lvNoticias);
+        registerForContextMenu(lvNoticias);
         adapter = new NoticiaAdapter(this, noticias);
         lvNoticias.setAdapter(adapter);
     }
@@ -60,5 +64,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.context, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        AdapterView.AdapterContextMenuInfo
+                menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int posicion = menuInfo.position;
+        Noticia noticia = null;
+
+        switch (item.getItemId()) {
+            case R.id.menu_modificar:
+                Intent intent = new Intent(this, AltaNoticia.class);
+                noticia = noticias.get(posicion);
+                intent.putExtra("noticia", noticia);
+                startActivity(intent);
+                return true;
+            case R.id.menu_eliminar:
+                noticia = noticias.remove(posicion);
+                BaseDatos db = new BaseDatos(this);
+                db.eliminarNoticia(noticia.getId());
+                adapter.notifyDataSetChanged();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 }
