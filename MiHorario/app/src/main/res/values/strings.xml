@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MiHorario</string>
+    <string name="lb_que_toca_ahora">¿Qué toca ahora?</string>
+    <string name="lb_ver_horario">Ver Horario</string>
+    <string name="lb_anadir_clase">Añadir Clase</string>
+    <string name="lb_asignatura">Asignatura</string>
+    <string name="lb_hora">Hora</string>
+    <string name="lb_anadir">Añadir</string>
+    <string name="lb_cancelar">Cancelar</string>
+    <string name="mensaje_anadir">Asignatura añadida</string>
+</resources>
