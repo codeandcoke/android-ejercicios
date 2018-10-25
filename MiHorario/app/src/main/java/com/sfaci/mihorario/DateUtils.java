@@ -12,15 +12,15 @@ public class DateUtils {
 
         switch (dia) {
             case "Lunes":
-                return 0;
-            case "Martes":
-                return 1;
-            case "Miércoles":
                 return 2;
-            case "Jueves":
+            case "Martes":
                 return 3;
-            case "Viernes":
+            case "Miércoles":
                 return 4;
+            case "Jueves":
+                return 5;
+            case "Viernes":
+                return 6;
             default:
                 return -1;
         }
