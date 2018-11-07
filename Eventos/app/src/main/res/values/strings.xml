@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Eventos</string>
+    <string name="bt_alta_eventos">Alta Eventos</string>
 </resources>

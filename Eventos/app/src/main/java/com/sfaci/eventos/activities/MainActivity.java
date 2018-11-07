@@ -1,13 +1,17 @@
 package com.sfaci.eventos.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.sfaci.eventos.R;
 import com.sfaci.eventos.adapters.EventoAdapter;
 import com.sfaci.eventos.base.Evento;
+import com.sfaci.eventos.db.Database;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,7 +26,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        poblarArrayList();
+        Database db = new Database(this);
+        eventos = db.getEventos();
 
         ListView lvEventos = findViewById(R.id.lvEventos);
         EventoAdapter adapter = new EventoAdapter(this,
@@ -30,24 +35,22 @@ public class MainActivity extends Activity {
         lvEventos.setAdapter(adapter);
     }
 
-    private void poblarArrayList() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_bar, menu);
 
-        eventos = new ArrayList<>();
-        Evento evento = new Evento();
-        evento.setNombre("Estudiar");
-        evento.setDescripcion("Estudiar en la biblioteca");
-        evento.setPrecio(0);
-        evento.setDireccion("La biblioteca");
-        evento.setFecha(new Date());
-        evento.setAforo(2400);
-        eventos.add(evento);
-        Evento evento2 = new Evento();
-        evento2.setNombre("Instalar el ADSL de Fernando");
-        evento2.setDescripcion("Poner en marcha el ADSL");
-        evento2.setPrecio(50);
-        evento2.setDireccion("Casa de Fernando");
-        evento2.setFecha(new Date());
-        evento2.setAforo(100);
-        eventos.add(evento2);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_alta_eventos:
+                Intent intent = new Intent(this, AltaEventos.class);
+                startActivity(intent);
+                return true;
+            default:
+                return false;
+        }
     }
 }
