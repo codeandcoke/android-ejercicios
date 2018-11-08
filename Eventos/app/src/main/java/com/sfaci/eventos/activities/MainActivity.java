@@ -19,7 +19,8 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    List<Evento> eventos;
+    private List<Evento> eventos;
+    private EventoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,19 @@ public class MainActivity extends Activity {
         eventos = db.getEventos();
 
         ListView lvEventos = findViewById(R.id.lvEventos);
-        EventoAdapter adapter = new EventoAdapter(this,
+        adapter = new EventoAdapter(this,
                 R.layout.item_evento, eventos);
         lvEventos.setAdapter(adapter);
+    }
+
+    @Override
+    protected void  onResume() {
+        super.onResume();
+
+        eventos.clear();
+        Database db = new Database(this);
+        eventos.addAll(db.getEventos());
+        adapter.notifyDataSetChanged();
     }
 
     @Override

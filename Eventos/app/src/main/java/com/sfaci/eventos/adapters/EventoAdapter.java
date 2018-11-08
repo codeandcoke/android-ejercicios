@@ -19,7 +19,8 @@ public class EventoAdapter extends BaseAdapter {
     private int idLayout;
     private List<Evento> eventos;
 
-    public EventoAdapter(Context contexto, int idLayout, List<Evento> eventos) {
+    public EventoAdapter(Context contexto, int idLayout,
+                         List<Evento> eventos) {
 
         inflater = LayoutInflater.from(contexto);
         this.idLayout = idLayout;
