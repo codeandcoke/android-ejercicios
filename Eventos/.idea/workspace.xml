@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
-              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+              <caret line="69" column="64" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +77,8 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+            <state relative-caret-position="196">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,11 +86,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="menu_contextual.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_contextual.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding>
+                <element signature="e#179#198#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AltaEventos.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+            <state relative-caret-position="374">
+              <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+              <folding>
+                <element signature="e#1181#1197#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,17 +116,8 @@
       <file leaf-file-name="activity_alta_eventos.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="377">
+            <state relative-caret-position="2354">
               <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
-              <folding>
-                <element signature="e#641#660#0" expanded="true" />
-                <element signature="e#1138#1162#0" expanded="true" />
-                <element signature="e#1541#1563#0" expanded="true" />
-                <element signature="e#1944#1963#0" expanded="true" />
-                <element signature="e#2302#2320#0" expanded="true" />
-                <element signature="e#2681#2699#0" expanded="true" />
-                <element signature="e#3413#3430#0" expanded="true" />
-              </folding>
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2">
@@ -128,8 +137,8 @@
       <file leaf-file-name="Evento.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="66">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,21 +149,9 @@
       <file leaf-file-name="EventoAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="498">
+              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu_bar.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_bar.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -163,8 +160,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -2434,14 +2431,15 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_bar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Constantes.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Util.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_contextual.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java" />
       </list>
     </option>
   </component>
@@ -2456,9 +2454,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2483,6 +2481,13 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="eventos" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="activities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Eventos" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="eventos" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Eventos" type="1abcf292:AndroidViewProjectNode" />
@@ -2515,6 +2520,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Eventos" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -2676,7 +2687,7 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32991454" />
-      <window_info anchor="right" id="Attributes" order="4" sideWeight="0.71794873" weight="0.36645964" />
+      <window_info anchor="right" id="Attributes" order="4" sideWeight="0.71794873" weight="0.39233956" />
       <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32991454" />
@@ -2685,8 +2696,8 @@
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4923077" weight="0.1252588" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4923077" weight="0.1873706" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.0" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" sideWeight="0.2820513" side_tool="true" weight="0.12939958" />
@@ -2695,10 +2706,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Assistant" order="4" sideWeight="0.4991453" weight="0.32919255" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
@@ -2741,6 +2752,43 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_bar.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+          <folding>
+            <element signature="e#1181#1197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -3051,23 +3099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
         <state />
@@ -3076,18 +3107,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_contextual.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+        <state relative-caret-position="176">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding>
-            <element signature="e#641#660#0" expanded="true" />
-            <element signature="e#1138#1162#0" expanded="true" />
-            <element signature="e#1541#1563#0" expanded="true" />
-            <element signature="e#1944#1963#0" expanded="true" />
-            <element signature="e#2302#2320#0" expanded="true" />
-            <element signature="e#2681#2699#0" expanded="true" />
-            <element signature="e#3413#3430#0" expanded="true" />
+            <element signature="e#179#198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3095,10 +3120,37 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+        <state relative-caret-position="196">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2354">
+          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3108,7 +3160,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <caret line="69" column="64" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3117,8 +3169,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+        <state relative-caret-position="374">
+          <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+          <folding>
+            <element signature="e#1181#1197#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

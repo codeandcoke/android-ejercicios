@@ -1,5 +1,6 @@
 package com.sfaci.eventos.activities;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ import java.text.ParseException;
 
 public class AltaEventos extends Activity implements View.OnClickListener {
 
+    private String accion;
+    private long idEvento;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,27 @@ public class AltaEventos extends Activity implements View.OnClickListener {
         btAlta.setOnClickListener(this);
         Button btCancelar = findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(this);
+
+        accion = getIntent().getStringExtra("accion");
+        if (accion.equals("modificar")) {
+            Evento evento = (Evento) getIntent().getSerializableExtra("evento");
+            rellenarDatos(evento);
+            btAlta.setText(R.string.guardar);
+        }
+    }
+
+    private void rellenarDatos(Evento evento) {
+        EditText etNombre = findViewById(R.id.etNombre);
+        EditText etDescripcion = findViewById(R.id.etDescripcion);
+        EditText etDireccion = findViewById(R.id.etDireccion);
+        EditText etFecha = findViewById(R.id.etFecha);
+        EditText etPrecio = findViewById(R.id.etPrecio);
+        EditText etAforo = findViewById(R.id.etAforo);
+
+        etNombre.setText(evento.getNombre());
+        // . . . .
+
+        idEvento = evento.getId();
     }
 
     @Override
@@ -50,9 +75,20 @@ public class AltaEventos extends Activity implements View.OnClickListener {
                     evento.setAforo(Integer.parseInt(etAforo.getText().toString()));
 
                     Database db = new Database(this);
-                    db.nuevoEvento(evento);
+                    switch (accion) {
+                        case "nuevo":
+                            db.nuevoEvento(evento);
+                            break;
+                        case "modificar":
+                            evento.setId(idEvento);
+                            db.modificarEvento(evento);
+                            break;
+                        default:
+                            break;
+                    }
+
                     Toast.makeText(this, "El evento " + evento.getNombre() +
-                            " ha sido creado", Toast.LENGTH_LONG).show();
+                            " ha sido guardado", Toast.LENGTH_LONG).show();
 
                     etNombre.setText("");
                     etNombre.requestFocus();

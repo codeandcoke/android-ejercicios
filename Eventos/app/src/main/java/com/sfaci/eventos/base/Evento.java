@@ -2,9 +2,10 @@ package com.sfaci.eventos.base;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Evento {
+public class Evento implements Serializable {
 
     private long id;
     private String nombre;

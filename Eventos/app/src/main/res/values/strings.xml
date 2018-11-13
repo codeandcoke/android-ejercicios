@@ -9,4 +9,7 @@
     <string name="lb_aforo">Aforo</string>
     <string name="lb_alta">Alta</string>
     <string name="lb_cancelar">Cancelar</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar">Guardar</string>
 </resources>

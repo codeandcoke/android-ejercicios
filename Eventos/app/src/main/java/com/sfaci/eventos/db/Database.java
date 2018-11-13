@@ -63,6 +63,7 @@ public class Database extends SQLiteOpenHelper {
 
     public void eliminarEvento(Evento evento) {
 
+
     }
 
     public void modificarEvento(Evento evento) {
