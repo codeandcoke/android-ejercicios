@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.sfaci.eventos.R;
 import com.sfaci.eventos.base.Evento;
+import com.sfaci.eventos.util.Util;
 
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class EventoAdapter extends BaseAdapter {
         holder.ivImagen.setImageBitmap(evento.getImagen());
         holder.tvNombre.setText(evento.getNombre());
         holder.tvDescripcion.setText(evento.getDescripcion());
-        holder.tvPrecio.setText(String.valueOf(evento.getPrecio()));
+        holder.tvPrecio.setText(Util.formatearMoneda(evento.getPrecio()));
 
         return convertView;
     }

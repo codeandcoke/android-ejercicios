@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-820">
-              <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-end-line="40" />
+              <caret line="39" column="16" selection-start-line="39" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +65,8 @@
       <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+            <state relative-caret-position="302">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+            <state relative-caret-position="434">
+              <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AltaEventos.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AltaEventos.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+            <state relative-caret-position="746">
+              <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
               <folding>
                 <element signature="e#1181#1197#0" expanded="true" />
                 <element signature="e#2666#2689#0" expanded="true" />
@@ -150,8 +150,8 @@
       <file leaf-file-name="EventoAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="322">
+              <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -2433,14 +2433,14 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_bar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Constantes.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Util.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_contextual.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Util.java" />
       </list>
     </option>
   </component>
@@ -3091,16 +3091,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
         <state />
@@ -3120,13 +3110,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml">
@@ -3152,30 +3135,47 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-820">
-          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-end-line="40" />
+          <caret line="39" column="16" selection-start-line="39" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-          <folding>
-            <element signature="e#1181#1197#0" expanded="true" />
-            <element signature="e#2666#2689#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+        <state relative-caret-position="434">
+          <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+          <folding>
+            <element signature="e#1181#1197#0" expanded="true" />
+            <element signature="e#2666#2689#0" expanded="true" />
           </folding>
         </state>
       </provider>

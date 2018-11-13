@@ -70,13 +70,13 @@ public class AltaEventos extends Activity implements View.OnClickListener {
                 EditText etAforo = findViewById(R.id.etAforo);
 
                 try {
-                    if (etPrecio.getText().equals("")) {
+                    if (etPrecio.getText().toString().equals("")) {
                         Toast.makeText(this, R.string.mensaje_precio,
                                 Toast.LENGTH_LONG).show();
                         return;
                     }
 
-                    if (etAforo.getText().equals(""))
+                    if (etAforo.getText().toString().equals(""))
                         etAforo.setText("0");
 
                     Evento evento = new Evento();

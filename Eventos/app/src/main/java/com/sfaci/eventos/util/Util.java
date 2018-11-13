@@ -1,5 +1,6 @@
 package com.sfaci.eventos.util;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,5 +17,11 @@ public class Util {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         return sdf.parse(fecha);
+    }
+
+    public static String formatearMoneda(float cantidad) {
+
+        DecimalFormat df = new DecimalFormat("#.00 €");
+        return df.format(cantidad);
     }
 }
