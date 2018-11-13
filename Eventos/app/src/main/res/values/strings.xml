@@ -12,4 +12,5 @@
     <string name="modificar">Modificar</string>
     <string name="eliminar">Eliminar</string>
     <string name="guardar">Guardar</string>
+    <string name="mensaje_precio">El precio es obligatorio</string>
 </resources>

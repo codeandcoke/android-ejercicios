@@ -48,7 +48,11 @@ public class AltaEventos extends Activity implements View.OnClickListener {
         EditText etAforo = findViewById(R.id.etAforo);
 
         etNombre.setText(evento.getNombre());
-        // . . . .
+        etDescripcion.setText(evento.getDescripcion());
+        etDireccion.setText(evento.getDireccion());
+        etFecha.setText(Util.formatearFecha(evento.getFecha()));
+        etPrecio.setText(String.valueOf(evento.getPrecio()));
+        etAforo.setText(String.valueOf(evento.getAforo()));
 
         idEvento = evento.getId();
     }
@@ -66,6 +70,15 @@ public class AltaEventos extends Activity implements View.OnClickListener {
                 EditText etAforo = findViewById(R.id.etAforo);
 
                 try {
+                    if (etPrecio.getText().equals("")) {
+                        Toast.makeText(this, R.string.mensaje_precio,
+                                Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
+                    if (etAforo.getText().equals(""))
+                        etAforo.setText("0");
+
                     Evento evento = new Evento();
                     evento.setNombre(etNombre.getText().toString());
                     evento.setDescripcion(etDescripcion.getText().toString());

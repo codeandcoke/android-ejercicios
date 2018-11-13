@@ -63,11 +63,29 @@ public class Database extends SQLiteOpenHelper {
 
     public void eliminarEvento(Evento evento) {
 
+        SQLiteDatabase db = getWritableDatabase();
 
+        String[] args = {String.valueOf(evento.getId())};
+        db.delete(TABLA_EVENTOS, "id = ?", args);
+        db.close();
     }
 
     public void modificarEvento(Evento evento) {
 
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(NOMBRE, evento.getNombre());
+        values.put(DESCRIPCION, evento.getDescripcion());
+        values.put(DIRECCION, evento.getDireccion());
+        values.put(PRECIO, evento.getPrecio());
+        values.put(AFORO, evento.getAforo());
+        values.put(FECHA, Util.formatearFecha(evento.getFecha()));
+        // TODO pasar la imagen
+
+        String[] args = {String.valueOf(evento.getId())};
+        db.update(TABLA_EVENTOS, values, "id = ?", args);
+        db.close();
     }
 
     public List<Evento> getEventos() {

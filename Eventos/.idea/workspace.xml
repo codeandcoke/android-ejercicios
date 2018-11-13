@@ -43,8 +43,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="69" column="64" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="64" />
+            <state relative-caret-position="-820">
+              <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="412">
+              <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,13 +101,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AltaEventos.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AltaEventos.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+            <state relative-caret-position="174">
+              <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
               <folding>
                 <element signature="e#1181#1197#0" expanded="true" />
+                <element signature="e#2666#2689#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2436,10 +2437,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/adapters/EventoAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_contextual.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/base/Evento.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java" />
       </list>
     </option>
   </component>
@@ -2785,6 +2786,7 @@
           <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
           <folding>
             <element signature="e#1181#1197#0" expanded="true" />
+            <element signature="e#2666#2689#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3127,16 +3129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alta_eventos.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2354">
@@ -3159,8 +3151,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="69" column="64" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="64" />
+        <state relative-caret-position="-820">
+          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3169,10 +3161,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/activities/AltaEventos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+        <state relative-caret-position="174">
+          <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
           <folding>
             <element signature="e#1181#1197#0" expanded="true" />
+            <element signature="e#2666#2689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sfaci/eventos/db/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
