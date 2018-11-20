@@ -20,6 +20,7 @@ import static com.sfaci.eventos.util.Constantes.DATABASE_NAME;
 import static com.sfaci.eventos.util.Constantes.DESCRIPCION;
 import static com.sfaci.eventos.util.Constantes.DIRECCION;
 import static com.sfaci.eventos.util.Constantes.FECHA;
+import static com.sfaci.eventos.util.Constantes.IMAGEN;
 import static com.sfaci.eventos.util.Constantes.NOMBRE;
 import static com.sfaci.eventos.util.Constantes.PRECIO;
 import static com.sfaci.eventos.util.Constantes.TABLA_EVENTOS;
@@ -36,12 +37,13 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLA_EVENTOS + "(" + _ID +
                 " INTEGER PRIMARY KEY AUTOINCREMENT, " + NOMBRE + " TEXT, " +
                 DESCRIPCION + " TEXT, " + DIRECCION + " TEXT, " + FECHA + " TEXT, " +
-                AFORO + " INTEGER, " + PRECIO + " REAL)");
+                AFORO + " INTEGER, " + PRECIO + " REAL, " + IMAGEN + " BLOB)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE " + TABLA_EVENTOS);
+        onCreate(db);
     }
 
     public void nuevoEvento(Evento evento) {
@@ -55,7 +57,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(FECHA, Util.formatearFecha(evento.getFecha()));
         values.put(AFORO, evento.getAforo());
         values.put(PRECIO, evento.getPrecio());
-        // TODO Guardar la imagen
+        values.put(IMAGEN, Util.getBytes(evento.getImagen()));
 
         db.insertOrThrow(TABLA_EVENTOS, null, values);
         db.close();
@@ -66,7 +68,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         String[] args = {String.valueOf(evento.getId())};
-        db.delete(TABLA_EVENTOS, "id = ?", args);
+        db.delete(TABLA_EVENTOS, _ID + " = ?", args);
         db.close();
     }
 
@@ -81,17 +83,17 @@ public class Database extends SQLiteOpenHelper {
         values.put(PRECIO, evento.getPrecio());
         values.put(AFORO, evento.getAforo());
         values.put(FECHA, Util.formatearFecha(evento.getFecha()));
-        // TODO pasar la imagen
+        values.put(IMAGEN, Util.getBytes(evento.getImagen()));
 
         String[] args = {String.valueOf(evento.getId())};
-        db.update(TABLA_EVENTOS, values, "id = ?", args);
+        db.update(TABLA_EVENTOS, values, _ID + " = ?", args);
         db.close();
     }
 
     public List<Evento> getEventos() {
 
         final String[] COLUMNAS = {_ID, NOMBRE, DESCRIPCION, DIRECCION,
-                                            PRECIO, AFORO, FECHA};
+                                            PRECIO, AFORO, FECHA, IMAGEN};
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.query(TABLA_EVENTOS, COLUMNAS, null, null, null,
@@ -112,6 +114,7 @@ public class Database extends SQLiteOpenHelper {
             } catch (ParseException pe) {
                 evento.setFecha(new Date());
             }
+            evento.setImagen(Util.getBitmap(cursor.getBlob(7)));
             eventos.add(evento);
         }
 

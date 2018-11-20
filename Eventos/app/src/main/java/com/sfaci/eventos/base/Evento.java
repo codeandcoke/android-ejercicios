@@ -1,6 +1,10 @@
 package com.sfaci.eventos.base;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.sfaci.eventos.util.Util;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,7 +18,9 @@ public class Evento implements Serializable {
     private float precio;
     private Date fecha;
     private int aforo;
-    private Bitmap imagen;
+    private transient Bitmap imagen;
+
+    public Evento() {}
 
     public long getId() {
         return id;

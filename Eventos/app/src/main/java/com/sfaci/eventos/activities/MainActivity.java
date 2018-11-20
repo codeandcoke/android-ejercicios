@@ -15,6 +15,7 @@ import com.sfaci.eventos.R;
 import com.sfaci.eventos.adapters.EventoAdapter;
 import com.sfaci.eventos.base.Evento;
 import com.sfaci.eventos.db.Database;
+import com.sfaci.eventos.util.Util;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,6 +45,11 @@ public class MainActivity extends Activity {
     protected void  onResume() {
         super.onResume();
 
+        refrescarListaEventos();
+    }
+
+    private void refrescarListaEventos() {
+
         eventos.clear();
         Database db = new Database(this);
         eventos.addAll(db.getEventos());
@@ -66,14 +72,16 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.menu_modificar:
                 Intent intent = new Intent(this, AltaEventos.class);
+                Evento evento = eventos.get(posicion);
                 intent.putExtra("accion", "modificar");
-                intent.putExtra("evento", eventos.get(posicion));
+                intent.putExtra("evento", evento);
+                intent.putExtra("imagen", Util.getBytes(evento.getImagen()));
                 startActivity(intent);
                 return true;
             case R.id.menu_eliminar:
                 Database db = new Database(this);
                 db.eliminarEvento(eventos.get(posicion));
-                adapter.notifyDataSetChanged();
+                refrescarListaEventos();
                 return true;
             default:
                 return false;
