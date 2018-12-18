@@ -21,6 +21,7 @@ import com.sfaci.eventos.base.Evento;
 import com.sfaci.eventos.util.Constantes;
 import com.sfaci.eventos.util.Util;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -85,8 +86,22 @@ public class MainActivity extends Activity {
 
                 // TODO Parsear el JSON
                 JSONObject json = new JSONObject(resultado);
-
-
+                JSONArray jsonArray = json.getJSONArray("@graph");
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
+                        Evento evento = new Evento();
+                        evento.setNombre(jsonArray.getJSONObject(i).getString("title"));
+                        evento.setDescripcion(jsonArray.getJSONObject(i).getString("description"));
+                        evento.setDireccion(jsonArray.getJSONObject(i).getString("event-location"));
+                        evento.setPrecio(Float.parseFloat(jsonArray.getJSONObject(i).getString("price")));
+                        evento.setFecha(new Date());
+                        evento.setLatitud(jsonArray.getJSONObject(i).getJSONObject("location").getDouble("latitude"));
+                        evento.setLongitud(jsonArray.getJSONObject(i).getJSONObject("location").getDouble("longitude"));
+                        eventos.add(evento);
+                    } catch (JSONException jsone) {
+                        jsone.printStackTrace();
+                    }
+                }
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             } catch (JSONException jsone) {
@@ -111,6 +126,7 @@ public class MainActivity extends Activity {
             if (dialog != null)
                 dialog.dismiss();
 
+            adapter.notifyDataSetChanged();
             Toast.makeText(getApplicationContext(), String.valueOf(resultado.length()), Toast.LENGTH_LONG).show();
         }
     }
