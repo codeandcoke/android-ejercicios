@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Eventos</string>
+    <string name="bt_alta_eventos">Alta Eventos</string>
+    <string name="lb_nombre">Nombre</string>
+    <string name="lb_descripcion">Descripción</string>
+    <string name="lb_direccion">Dirección</string>
+    <string name="lb_precio">Precio</string>
+    <string name="lb_fecha">Fecha</string>
+    <string name="lb_aforo">Aforo</string>
+    <string name="lb_alta">Alta</string>
+    <string name="lb_cancelar">Cancelar</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar">Guardar</string>
+    <string name="mensaje_precio">El precio es obligatorio</string>
+    <string name="mensaje_cargando">Cargando datos</string>
+</resources>
