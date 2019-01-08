@@ -5,21 +5,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.sfaci.eventos.R;
 import com.sfaci.eventos.adapters.EventoAdapter;
 import com.sfaci.eventos.base.Evento;
 import com.sfaci.eventos.util.Constantes;
-import com.sfaci.eventos.util.Util;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private List<Evento> eventos;
     private EventoAdapter adapter;
@@ -45,10 +39,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         eventos = new ArrayList<>();
-        ListView lvEventos = findViewById(R.id.lvEventos);
+        ListView lvEventos = (ListView) findViewById(R.id.lvEventos);
         adapter = new EventoAdapter(this,
                 R.layout.item_evento, eventos);
         lvEventos.setAdapter(adapter);
+        lvEventos.setOnItemClickListener(this);
 
         DescargaDatos descarga = new DescargaDatos();
         descarga.execute(Constantes.URL);
@@ -58,6 +53,17 @@ public class MainActivity extends Activity {
     protected void  onResume() {
         super.onResume();
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+
+        Evento evento = eventos.get(posicion);
+        Intent intent = new Intent(this, MapaActivity.class);
+        intent.putExtra("nombre", evento.getNombre());
+        intent.putExtra("latitud", evento.getLatitud());
+        intent.putExtra("longitud", evento.getLongitud());
+        startActivity(intent);
     }
 
     private class DescargaDatos extends AsyncTask<String, Void, Void> {
@@ -127,7 +133,6 @@ public class MainActivity extends Activity {
                 dialog.dismiss();
 
             adapter.notifyDataSetChanged();
-            Toast.makeText(getApplicationContext(), String.valueOf(resultado.length()), Toast.LENGTH_LONG).show();
         }
     }
 

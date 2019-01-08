@@ -44,9 +44,9 @@ public class EventoAdapter extends BaseAdapter {
             convertView = inflater.inflate(idLayout, null);
 
             holder = new ViewHolder();
-            holder.tvNombre = convertView.findViewById(R.id.tvNombre);
-            holder.tvDescripcion = convertView.findViewById(R.id.tvDescripcion);
-            holder.tvPrecio = convertView.findViewById(R.id.tvPrecio);
+            holder.tvNombre = (TextView) convertView.findViewById(R.id.tvNombre);
+            holder.tvDescripcion = (TextView) convertView.findViewById(R.id.tvDescripcion);
+            holder.tvPrecio = (TextView) convertView.findViewById(R.id.tvPrecio);
 
             convertView.setTag(holder);
         }
