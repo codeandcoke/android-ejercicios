@@ -66,7 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 Tarea tarea = new Tarea(nombre);
-                tareas.add(tarea);
+                Database db = new Database(this);
+                db.nuevaTarea(tarea);
+
                 if (estado == VER_PENDIENTES) {
                     tareasVistas.add(tarea);
                     adaptador.notifyDataSetChanged();
