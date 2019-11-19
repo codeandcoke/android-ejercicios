@@ -24,8 +24,7 @@ import static com.centroafuera.mistareas.MainActivity.Estado.VER_PENDIENTES;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<Tarea> tareas;
-    private ArrayList<Tarea> tareasVistas;
-    private ArrayAdapter<Tarea> adaptador;
+    private TareaAdapter adaptador;
     public enum Estado {
         VER_HECHAS, VER_PENDIENTES
     }
@@ -44,10 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btPendientes.setOnClickListener(this);
 
         tareas = new ArrayList<>();
-        tareasVistas = new ArrayList<>();
         ListView lvTareas = findViewById(R.id.lvTareas);
         adaptador =
-                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, tareasVistas);
+                new TareaAdapter(this, tareas);
         lvTareas.setAdapter(adaptador);
         estado = VER_PENDIENTES;
 
@@ -70,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 db.nuevaTarea(tarea);
 
                 if (estado == VER_PENDIENTES) {
-                    tareasVistas.add(tarea);
+                    tareas.clear();
+                    tareas.addAll(db.getTareasPendientes());
                     adaptador.notifyDataSetChanged();
                 } else {
                     Toast.makeText(this, R.string.mTareaAnadidaPendientes,
@@ -81,22 +80,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btHechas:
                 // Actualiza la lista de tareas vistas
-                tareasVistas.clear();
-                for (Tarea laTarea : tareas) {
-                    if (laTarea.estaHecha())
-                        tareasVistas.add(laTarea);
-                }
+                tareas.clear();
+                db = new Database(this);
+                tareas.addAll(db.getTareasHechas());
                 adaptador.notifyDataSetChanged();
                 estado = VER_HECHAS;
                 cambiarEstadoBotones();
                 break;
             case R.id.btPendientes:
                 // Actualiza la lista de tareas vistas
-                tareasVistas.clear();
-                for (Tarea laTarea : tareas) {
-                    if (!laTarea.estaHecha())
-                        tareasVistas.add(laTarea);
-                }
+                tareas.clear();
+                db = new Database(this);
+                tareas.addAll(db.getTareasPendientes());
                 adaptador.notifyDataSetChanged();
                 estado = VER_PENDIENTES;
                 cambiarEstadoBotones();
@@ -151,14 +146,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (item.getItemId()) {
             case R.id.itemEliminar:
-                Tarea tareaEliminada = tareasVistas.remove(posicion);
+                Tarea tareaEliminada = tareas.remove(posicion);
+                Database db = new Database(this);
+                db.eliminarTarea(tareaEliminada);
                 tareas.remove(tareaEliminada);
                 adaptador.notifyDataSetChanged();
                 return true;
             case R.id.itemHecho:
-                Tarea tarea = tareasVistas.get(posicion);
+                Tarea tarea = tareas.get(posicion);
                 tarea.hacer();
-                tareasVistas.remove(posicion);
+                db = new Database(this);
+                db.modificarTarea(tarea);
                 adaptador.notifyDataSetChanged();
                 return true;
             default:

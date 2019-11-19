@@ -30,8 +30,8 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLA_TAREAS +
-                " (" +_ID + " INT PRIMARY KEY AUTOINCREMENT," +
-                NOMBRE + " TEXT, " + HECHA + " INT)");
+                " (" +_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                NOMBRE + " TEXT, " + HECHA + " INTEGER)");
     }
 
     @Override
@@ -75,18 +75,20 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public ArrayList<Tarea> getTareasPendientes() {
-        return null;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.query(TABLA_TAREAS, SELECT, null, null, null, null, NOMBRE);
+        return getLista(cursor);
     }
 
     public ArrayList<Tarea> getTareas(String busqueda) {
         return null;
     }
 
-    public void modificarTarea() {
+    public void eliminarTarea(Tarea tareaEliminada) {
 
     }
 
-    public void eliminarTarea() {
+    public void modificarTarea(Tarea tarea) {
 
     }
 }

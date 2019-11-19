@@ -1,5 +1,7 @@
 package com.centroafuera.mistareas;
 
+import java.time.LocalDate;
+
 public class Tarea {
 
     private long id;
