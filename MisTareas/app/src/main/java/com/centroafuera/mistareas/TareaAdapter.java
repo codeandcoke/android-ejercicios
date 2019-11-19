@@ -38,17 +38,17 @@ public class TareaAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             viewHolder.imagen = convertView.findViewById(R.id.ivImagen);
             viewHolder.nombre = convertView.findViewById(R.id.tvNombre);
-            viewHolder.imagen = convertView.findViewById(R.id.tvHecha);
+            viewHolder.hecha = convertView.findViewById(R.id.tvHecha);
+            convertView.setTag(viewHolder);
         } else {
             // El layout de la fila ya está inflado
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
         Tarea tarea = tareas.get(position);
-        viewHolder.imagen.setImageDrawable(
-                contexto.getResources().getDrawable(android.R.drawable.btn_star));
+        viewHolder.imagen.setImageBitmap(tarea.getImagen());
         viewHolder.nombre.setText(tarea.getNombre());
-        viewHolder.hecha.setText(String.valueOf(tarea.estaHecha()));
+        viewHolder.hecha.setText(tarea.estaHecha() ? "Hecha" : "Sin Hacer");
 
         return convertView;
     }

@@ -1,5 +1,7 @@
 package com.centroafuera.mistareas;
 
+import android.graphics.Bitmap;
+
 import java.time.LocalDate;
 
 public class Tarea {
@@ -7,6 +9,7 @@ public class Tarea {
     private long id;
     private String nombre;
     private boolean hecha;
+    private Bitmap imagen;
 
     public Tarea(long id, String nombre, boolean hecha) {
         this.id = id;
@@ -29,6 +32,14 @@ public class Tarea {
 
     public void hacer() {
         hecha = true;
+    }
+
+    public Bitmap getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Bitmap imagen) {
+        this.imagen = imagen;
     }
 
     @Override

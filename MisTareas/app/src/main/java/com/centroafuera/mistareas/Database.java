@@ -14,13 +14,14 @@ import java.util.List;
 import static android.provider.BaseColumns._ID;
 import static com.centroafuera.mistareas.Constantes.BASEDATOS;
 import static com.centroafuera.mistareas.Constantes.HECHA;
+import static com.centroafuera.mistareas.Constantes.IMAGEN;
 import static com.centroafuera.mistareas.Constantes.NOMBRE;
 import static com.centroafuera.mistareas.Constantes.TABLA_TAREAS;
 
 public class Database extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
-    private final String[] SELECT = new String[]{_ID, NOMBRE, HECHA};
+    private final String[] SELECT = new String[]{_ID, NOMBRE, HECHA, IMAGEN};
 
 
     public Database(Context contexto) {
@@ -31,7 +32,8 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLA_TAREAS +
                 " (" +_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                NOMBRE + " TEXT, " + HECHA + " INTEGER)");
+                NOMBRE + " TEXT, " + HECHA + " INTEGER," +
+                IMAGEN + " BLOB)");
     }
 
     @Override
@@ -46,6 +48,7 @@ public class Database extends SQLiteOpenHelper {
         ContentValues valores = new ContentValues();
         valores.put(NOMBRE, tarea.getNombre());
         valores.put(HECHA, tarea.estaHecha());
+        valores.put(IMAGEN, Util.getBytes(tarea.getImagen()));
         db.insertOrThrow(TABLA_TAREAS, null, valores);
     }
 
@@ -56,6 +59,7 @@ public class Database extends SQLiteOpenHelper {
                     cursor.getLong(0),
                     cursor.getString(1),
                     cursor.getInt(2) >= 1);
+            tarea.setImagen(Util.getBitmap(cursor.getBlob(3)));
             tareas.add(tarea);
         }
 

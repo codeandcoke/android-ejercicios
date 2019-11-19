@@ -38,10 +38,18 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="141dp">
 
+        <ImageView
+            android:id="@+id/ivImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher"
+            app:srcCompat="@mipmap/ic_launcher" />
+
         <EditText
             android:id="@+id/etTarea"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/escribe_aqui"
@@ -50,7 +58,7 @@
         <Button
             android:id="@+id/btAnadir"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0"
             android:text="+" />
 
