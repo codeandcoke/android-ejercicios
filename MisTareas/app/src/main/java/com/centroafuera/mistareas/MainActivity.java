@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -180,20 +182,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         AdapterView.AdapterContextMenuInfo menuInfo =
                 (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int posicion = menuInfo.position;
+        final int posicion = menuInfo.position;
 
         switch (item.getItemId()) {
             case R.id.itemEliminar:
-                Tarea tareaEliminada = tareas.remove(posicion);
-                Database db = new Database(this);
-                db.eliminarTarea(tareaEliminada);
-                tareas.remove(tareaEliminada);
-                adaptador.notifyDataSetChanged();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Estás seguro?")
+                        .setTitle("Eliminar tarea")
+                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Tarea tareaEliminada = tareas.remove(posicion);
+                                Database db = new Database(getApplicationContext());
+                                db.eliminarTarea(tareaEliminada);
+                                adaptador.notifyDataSetChanged();
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.create().show();
                 return true;
             case R.id.itemHecho:
                 Tarea tarea = tareas.get(posicion);
                 tarea.hacer();
-                db = new Database(this);
+                Database db = new Database(this);
                 db.modificarTarea(tarea);
                 adaptador.notifyDataSetChanged();
                 return true;
